@@ -11,10 +11,6 @@ const port = process.env.PORT;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get('/', async (req, res) => {
-  res.send(apiRes.data);
-});
-
 app.post(
   '/register',
   body('name').isLength({ min: 4, max: 12 }),
